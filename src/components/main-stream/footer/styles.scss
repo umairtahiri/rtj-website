@@ -1,0 +1,24 @@
+.footer-outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  background: #000;
+  box-shadow: 1px 1px 8px #000;
+  color: #fff;
+  
+
+  .footer-links {
+    margin-bottom: 10px;
+
+    .link {
+      margin: 0 25px;
+      color: #fff;
+
+      &:hover {
+        color: #4285f4;
+      }
+    }
+  }
+}
