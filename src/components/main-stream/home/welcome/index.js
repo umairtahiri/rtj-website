@@ -3,7 +3,7 @@ import { MDBMask, MDBView } from 'mdbreact'
 
 const WelcomeSection = () => {
   return (
-    <MDBView src="static/images/2.jpg">
+    <MDBView src={"static/images/2.jpg"}>
       <MDBMask
         overlay="purple-light"
         className="flex-center flex-column text-white text-center"
