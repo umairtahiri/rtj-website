@@ -8,7 +8,6 @@ import {
   MDBNavItem,
   MDBNavLink,
 } from 'mdbreact'
-import { BrowserRouter as Router } from 'react-router-dom'
 import './styles.scss'
 
 class TopBar extends Component {
