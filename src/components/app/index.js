@@ -8,7 +8,7 @@ import MainStream from '../main-stream'
 
 const App = () => (
   <Router>
-    <MainStream path="/" />
+    <MainStream />
   </Router>
 )
 

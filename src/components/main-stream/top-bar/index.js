@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -7,8 +7,9 @@ import {
   MDBCollapse,
   MDBNavItem,
   MDBNavLink,
-} from 'mdbreact'
-import './styles.scss'
+} from "mdbreact";
+import { navigate } from "@reach/router";
+import "./styles.scss";
 
 class TopBar extends Component {
   state = {
@@ -17,18 +18,22 @@ class TopBar extends Component {
   };
 
   imgStyle = {
-    width: '50px',
-    height: '50px',
+    width: "50px",
+    height: "50px",
   };
 
   onClick = () => {
     this.setState({
       collapse: !this.state.collapse,
-    })
-  }
+    });
+  };
 
-  render () {
-    const { collapse, isWideEnough } = this.state
+  handleNavigation = (path) => {
+    navigate(path);
+  };
+
+  render() {
+    const { collapse, isWideEnough } = this.state;
     return (
       <MDBNavbar
         color="bg-primary"
@@ -45,10 +50,14 @@ class TopBar extends Component {
         <MDBCollapse isOpen={collapse} navbar>
           <MDBNavbarNav right>
             <MDBNavItem className="navbar-action">
-              <MDBNavLink to="/">Home</MDBNavLink>
+              <MDBNavLink to="/" onClick={() => this.handleNavigation("/")}>
+                Home
+              </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem className="navbar-action">
-              <MDBNavLink to="/rtj-agendas">5 Core Agendas</MDBNavLink>
+              <MDBNavLink to="/rtj-agendas" onClick={() => this.handleNavigation("/rtj-agendas")}>
+                5 Core Agendas
+              </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem className="navbar-action">
               <MDBNavLink to="#">Media</MDBNavLink>
@@ -62,8 +71,8 @@ class TopBar extends Component {
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBNavbar>
-    )
+    );
   }
 }
 
-export default TopBar
+export default TopBar;

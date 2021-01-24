@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Router } from '@reach/router'
 import TopBar from './top-bar'
 import Home from './home'
 import AgendasPage from './agenda-page'
@@ -13,11 +13,11 @@ class RTJMainScreen extends Component {
       <div className="main-container">
         <TopBar />
         <div>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/project-details" exact component={ProjectDetails} />
-            <Route path="/rtj-agendas" exact component={AgendasPage} />
-          </Switch>
+          <Router>
+            <Home path="/" />
+            <ProjectDetails path="/project-details"/>
+            <AgendasPage path="/rtj-agendas"/>
+          </Router>
         </div>
         <Footer />
       </div>
